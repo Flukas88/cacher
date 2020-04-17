@@ -47,7 +47,7 @@ func (c *Cache) Read() ([]interface{}, error) {
 
 // Expired checks if the cache is still valid
 func (c *Cache) Expired(t time.Time) bool {
-	return time.Now().Sub(t) > c.timeout
+	return time.Since(t) > c.timeout
 }
 
 // Age gives back the cache age
